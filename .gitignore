@@ -54,3 +54,7 @@ dkms.conf
 # Visual Studio Code settings
 
 *.vscode/
+
+#bin
+
+*.bin
