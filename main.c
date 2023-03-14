@@ -4,6 +4,17 @@
 
 #define LENGTH 100
 
+typedef struct
+{
+    int value;
+    struct Node *next;
+}Node;
+
+typedef struct{
+    Node *begin;
+    int length;
+}List;
+
 void initialize_list(List *list);
 void insert(List *list, int value);
 int search(List *list, int value);
@@ -16,7 +27,7 @@ int main()
     int option, value;
     List table[LENGTH];
 
-    initialize_table(LENGTH);
+    initialize_table(&table);
 
     do
     {
@@ -26,19 +37,18 @@ int main()
         {
         case 0:
             printf("Voce escolheu sair...");
-            wait(2);
             return 0;
             break;
 
         case 1:
             printf("\nDigite o valor a ser inserido: ");
-            scanf("%d", value);
+            scanf("%d", &value);
             insert(table, value);
             break;
         
         case 2:
             printf("\nDigite o valor a ser buscado: ");
-            scanf("%d", value);
+            scanf("%d", &value);
             if (search(table, value) != -1)
                 printf("Valor encontrado!");
             else   
@@ -52,17 +62,6 @@ int main()
     
 }
 
-// Função responsável pela estrutura do nó
-typedef struct
-{
-    int value;
-    struct Node *next;
-}Node;
-// Função responsável pela lista
-typedef struct{
-    Node *begin;
-    int length;
-}List;
 //Função responsável pela inicialização
 void initialize_list(List *list)
 {
