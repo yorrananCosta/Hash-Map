@@ -1,2 +1,2 @@
-# Hash-Map
-Develop Hash Map
+# Hash-Table
+Develop a hash table
