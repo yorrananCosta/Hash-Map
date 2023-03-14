@@ -115,7 +115,6 @@ void print(List *list)
             aux = aux->next;
         }
     }
-    printf("sss");
 }
 // Inicializa as listas dentro da tabela;
 void initialize_table(List table[])
